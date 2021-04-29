@@ -5,10 +5,8 @@ public class AddDigits {
         int sum = 0;
         if (input != null || !input.isEmpty()){
             for (char character: input.toCharArray()){
-                try {
-                    int number = Integer.parseInt(String.valueOf(character));
-                    sum += number;
-                } catch (NumberFormatException ignored){
+                if (Character.isDigit(character)){
+                    sum += Character.getNumericValue(character);
                 }
             }
         }
